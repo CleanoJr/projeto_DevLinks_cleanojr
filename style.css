@@ -84,11 +84,12 @@ body * {
     left: 0;
     z-index: 1;
     transform: translateY(-50%);
+
+    animation: slide-back 0.4s;
 }
 
 .light #switch button {
-    right: 0;
-    left: initial;
+    animation: slide-in 0.4s forwards;
 }
 
 #switch span {
@@ -160,4 +161,34 @@ footer {
     padding: 24px 0;
     text-align: center;
     font-size: 14px;
+}
+
+/* Media queries */
+@media (min-width: 700px) {
+    :root{
+        --bg-url: url(./assets/Interface=Desktop, Theme=Dark mode.jpg);
+    }
+    .light{
+        --bg-url: url(./assets/Interface=Desktop, Theme=Light mode.jpg);
+    }
+
+}
+
+/* Animações */
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left:50%;
+    }
+    to {
+        left: 0;
+    }
 }
